@@ -6,6 +6,14 @@ td, th {
     padding: 10px;
 }
 
+td + tr {
+    font-weight: bold;
+}
+
+td {
+    text-transform: capitalize;
+}
+
 tr:nth-child(odd) {
     background-color: #e4e4e4;
 }

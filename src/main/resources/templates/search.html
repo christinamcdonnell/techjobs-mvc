@@ -38,6 +38,21 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
+    <!--  <div th:replace="fragments :: loop-job-display-all-job-fields"></div>  -->
+
+    <div th:if="${jobs} and ${jobs.size()}">
+        <h1 th:text="${jobs.size()} + ' Result(s)'"></h1>
+
+        <div th:each="job : ${jobs}">
+            <table class="job-listing">
+                <tr th:each=" pair, idx :${job}" th:class="${idx.odd} ? 'odd'">
+                    <td th:text="${pair.getKey()}"></td>
+                    <td th:text="${pair.getValue()}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
 </div>
 
 </body>
